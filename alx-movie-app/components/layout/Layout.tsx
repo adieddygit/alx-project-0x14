@@ -2,7 +2,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 
-const Layout: React.FC = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Header />
