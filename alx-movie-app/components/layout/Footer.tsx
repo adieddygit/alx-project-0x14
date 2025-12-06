@@ -1,58 +1,43 @@
-import { 
-FaFacebook, 
-FaTwitter,
-FaInstagram } from 'react-icons/fa'; 
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter, faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white py-10">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <h3 className="text-xl font-bold mb-4">Splash App</h3>
-          <p className="text-gray-400 mb-4">
-            Your one-stop platform for all your needs. Connecting people, creating opportunities.
-          </p>
-          <p className="text-gray-400">© 2024 Splash App. All rights reserved.</p>
-        </div>
+    <footer className="bg-[#171D22] text-white py-10 px-6 md:px-10 lg:px-20">
+      <div className="flex flex-col md:flex-row justify-between items-center w-full">
+        {/* Footer Logo */}
+        <h2 className="text-xl md:text-4xl font-semibold mb-4 md:mb-0">
+          Cine<span className="text-[#E2D609]">Seek</span>
+        </h2>
 
-        <div>
-          <h4 className="text-lg font-semibold mb-4">Useful Links</h4>
-          <ul>
-            <li className="mb-2">
-              <a href="/about" className="text-gray-400 hover:text-white transition duration-300">
-                About Us
-              </a>
-            </li>
-            <li className="mb-2">
-              <a href="/services" className="text-gray-400 hover:text-white transition duration-300">
-                Services
-              </a>
-            </li>
-            <li className="mb-2">
-              <a href="/contact" className="text-gray-400 hover:text-white transition duration-300">
-                Contact Us
-              </a>
-            </li>
-          </ul>
-        </div>
+        <nav className="flex-1 flex justify-center space-x-6 mb-4 md:mb-0">
+          <Link href="/" className="hover:text-[#E2D609] text-lg transition-colors duration-300">Home</Link>
+          <Link href="/movies" className="hover:text-[#E2D609] text-lg transition-colors duration-300">Movies</Link>
+          <Link href="/contact" className="hover:text-[#E2D609] text-lg transition-colors duration-300">Contact</Link>
+          <Link href="/privacy" className="hover:text-[#E2D609] text-lg transition-colors duration-300">Privacy Policy</Link>
+        </nav>
 
-        <div>
-          <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
-          <div className="flex space-x-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition duration-300">
-              <FaFacebook size={24} />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition duration-300">
-              <FaTwitter size={24} />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition duration-300">
-              <FaInstagram size={24} />
-            </a>
-          </div>
+        <div className="flex space-x-4">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E2D609]">
+            <FontAwesomeIcon icon={faTwitter} size="lg" />
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E2D609]">
+            <FontAwesomeIcon icon={faFacebook} size="lg" />
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E2D609]">
+            <FontAwesomeIcon icon={faInstagram} size="lg" />
+          </a>
         </div>
       </div>
+
+      <div className="mt-8 text-center text-sm text-gray-400">
+        <p>&copy; 2024 CineSeek. All rights reserved.</p>
+      </div>
     </footer>
+
   );
-}
+};
+
 
 export default Footer;
